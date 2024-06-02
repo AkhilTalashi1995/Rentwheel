@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Admin Home</title>
+<link rel="stylesheet"
+	th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css}"
+	integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+	crossorigin="anonymous" />
+<style>
+.fixed {
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+body {
+	font-family: "Arial", sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #ffff;
+}
+
+header {
+	margin-top: 80px;
+	color: #333;
+	padding: 1em;
+	text-align: center;
+}
+
+section {
+	margin: 20px;
+}
+
+h2 {
+	color: #333;
+	text-align: center;
+}
+
+p {
+	color: #555;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+}
+
+li {
+	margin-bottom: 10px;
+}
+
+.navigation-card {
+	background-color: #f4f4f4;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	padding: 20px;
+	margin-bottom: 20px;
+	cursor: pointer;
+	transition: transform 0.3s;
+}
+
+.navigation-card:hover {
+	transform: scale(1.01);
+}
+
+footer {
+	background-color: #512da8;
+	color: #fff;
+	padding: 1em;
+	text-align: center;
+}
+
+.nav-color {
+	background-color: #512da8;
+}
+</style>
+</head>
+<body>
+	<nav class="navbar fixed navbar-expand-lg nav-color navbar-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" th:href="@{/admin/home}">rentwheel</a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link active"
+						th:href="@{/admin/home}">Home</a></li>
+					<li class="nav-item"><a class="nav-link active"
+						th:href="@{/admin/manage-cars}">Cars</a></li>
+<!-- 					<li class="nav-item"><a class="nav-link active"
+						th:href="@{/admin/manage-reservations}">Reservations</a></li>
+					<li class="nav-item"><a class="nav-link active"
+						th:href="@{/admin/manage-users}">Users</a></li> -->
+					<li class="nav-item dropdown"><a
+						class="nav-link dropdown-toggle" href="#" role="button"
+						data-bs-toggle="dropdown" aria-expanded="false"> Account </a>
+						<ul class="dropdown-menu">
+							<!-- <li><a class="dropdown-item" th:href="@{/admin/profile}">Profile</a>
+							</li> -->
+							<li><a class="dropdown-item" th:href="@{/logout}">Logout</a>
+							</li>
+						</ul></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<header>
+	    <h1 th:text="${name}"></h1>
+	
+		<h1>Welcome Back, Akhil Talashi!</h1>
+		<h5>RentWheel Admin Dashboard</h5>
+	</header>
+
+	<section>
+		<h3>Overview</h3>
+		<p>Welcome to RentWheel, your central hub for managing all aspects
+			of your car rental business. This intuitive admin dashboard empowers
+			you to effortlessly control locations, cars, reservations, users, and
+			your admin profile.</p>
+	</section>
+
+	<section>
+		<h3>Quick Navigation</h3>
+
+		<div class="navigation-card"
+			th:onclick="|window.location.href='@{/admin/manage-cars}'|">
+			<h3>Manage Cars</h3>
+			<p>Keep your fleet in check. Add new vehicles, update details,
+				and retire old ones to ensure your customers have access to the
+				latest models.</p>
+		</div>
+
+	<!-- 	<div class="navigation-card"
+			th:onclick="|window.location.href='@{/admin/manage-reservations}'|">
+			<h3>Manage Reservations</h3>
+			<p>View, modify, and confirm reservations with ease. Our
+				user-friendly interface ensures efficient management of booking
+				details.</p>
+		</div>
+
+		<div class="navigation-card"
+			th:onclick="|window.location.href='@{/admin/manage-users}'|">
+			<h3>Manage Users</h3>
+			<p>Maintain a comprehensive list of users. Manage accounts, view
+				activity, and provide support where needed.</p>
+		</div>
+
+		<div class="navigation-card"
+			th:onclick="|window.location.href='@{/admin/profile}'|">
+			<h3>Manage Admin Profile</h3>
+			<p>Keep your information up-to-date. Update passwords, manage
+				permissions, and personalize your admin profile.</p>
+		</div> -->
+	</section>
+
+	<script
+		th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js}"
+		integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+		crossorigin="anonymous"></script>
+</body>
+</html>

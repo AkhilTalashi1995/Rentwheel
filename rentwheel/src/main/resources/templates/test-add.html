@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Add New Location</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+<style>
+body {
+	background-color: #f8f9fa;
+}
+
+.container {
+	margin-top: 50px;
+}
+
+.card {
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+	background-color: #512da8;
+	color: #fff;
+	border-radius: 10px 10px 0 0;
+}
+
+.form-group {
+	margin-bottom: 20px;
+}
+
+.btn-action {
+	background-color: #512da8;
+	color: #fff;
+	border: none;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-md-6">
+				<div class="card">
+					<div class="card-header">
+						<h5 class="mb-0">Manage Location</h5>
+					</div>
+					<div class="card-body">
+					        
+					
+						<form id="locationForm" th:action="@{/admin/manage-locations/add-location/success}" method="post" th:object="${location}">
+							
+							<div class="form-group">
+								<label for="state">State</label> <input type="text"
+									class="form-control" id="state" name="state"
+									placeholder="Enter state" th:field="*{state}" required />
+							</div>
+							<div class="form-group">
+								<label for="city">City</label> <input type="text"
+									class="form-control" id="city" name="city"
+									placeholder="Enter city" th:field="*{city}"required />
+							</div>
+							<div class="form-group">
+								<label for="address">Address</label> <input type="text"
+									class="form-control" id="address" name="address"
+									placeholder="Enter address" th:field="*{address}"required />
+							</div>
+
+							<button type="submit" class="btn btn-action btn-block">
+								Add Location</button>
+						</form>
+
+
+						<a th:href="@{/admin/manage-locations}" class="btn btn-secondary btn-block mt-3"
+							>Back</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+public String getImage() {
+		return image;
+	}
+
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+
+	public String getBrand() {
+		return brand;
+	}
+
+
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
+
+
+	public String getModel() {
+		return model;
+	}
+
+
+	public void setModel(String model) {
+		this.model = model;
+	}
+
+
+	public int getRate() {
+		return rate;
+	}
+
+
+	public void setRate(int rate) {
+		this.rate = rate;
+	}
+
+
+
+	public int getLocationid() {
+		return locationid;
+	}
+	public void setLocationid(int locationid) {
+		this.locationid = locationid;
+	}
+	public String getState() {
+		return state;
+	}
+	public void setState(String state) {
+		this.state = state;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
