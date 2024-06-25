@@ -1,3 +1,4 @@
+[![HitCount](https://hits.dwyl.com/akhiltalashi1995/Rentwheel.svg?style=flat-square)](http://hits.dwyl.com/akhiltalashi1995/Rentwheel)
 <H1 align="center">Rentwheel</H1>
 
 ## Overview
